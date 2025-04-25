@@ -19,7 +19,7 @@
 
 - 🎯 **AI-Powered Q&A Generation**: Automatically generate flashcards from any STEM text using a fine-tuned T5 model.
 - ⏰ **Smart Spaced Repetition**: Combines SM-2, reinforcement learning heuristics, and Bayesian Knowledge Tracing for personalized review schedules.
-- 🖼️ **Dual-Coding Booster**: Generate illustrative images offline with Stable Diffusion to enhance recall.
+- 🖼️ **Dual-Coding Booster**: Generate illustrative images offline with Stable Diffusion to enhance recall.(Future Plans)
 - 📊 **Progress Tracking**: Visualize your mastery curve and review history in integrated dashboards.
 - ⚡ **Offline-First PWA**: Study anywhere—even without internet—thanks to a lightweight service worker cache.
 
