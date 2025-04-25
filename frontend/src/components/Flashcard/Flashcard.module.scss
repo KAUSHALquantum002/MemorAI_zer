@@ -1,0 +1,156 @@
+.flashcard {
+  background-color: var(--card-color);
+  width: min(380px, 90vw);
+  min-height: min(420px, 90vh);
+  height: 100%;
+  max-height: 90vh;
+  border-radius: 10px;
+  // box-shadow: 1px 1px 3px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+
+  transform: rotateY(var(--rotate-y, 0)) perspective(1000px)
+    translateY(var(--translate-y, 0));
+  transform-style: preserve-3d;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+
+  scrollbar-color: var(--card-scroll-track-color) var(--card-scroll-thumb-color);
+
+  -webkit-tap-highlight-color: transparent;
+
+  ::-webkit-scrollbar {
+    width: var(--card-sb-size);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--card-scroll-track-color);
+    border-radius: 10px;
+    // border-left: solid 3px var(--card-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--card-scroll-thumb-color);
+    border-radius: 10px;
+    // border-left: solid 3px var(--card-color);
+  }
+
+  &:hover {
+    --translate-y: -2px;
+
+    .flashcard__hint {
+      opacity: 100%;
+    }
+  }
+
+  &.flipped {
+    --rotate-y: 180deg;
+    // box-shadow: -1px 1px 3px var(--shadow-color);
+
+    .flashcard__back {
+      visibility: visible;
+    }
+  }
+
+  &.small {
+    width: min(400px, 90vw);
+    min-height: min(240px, 90vh);
+    font-size: calc(10px + 1.25vmin);
+
+    .flashcard__hint {
+      font-size: calc(10px + 1vmin);
+    }
+  }
+
+  &.pagebg {
+    background-color: var(--background-color);
+  }
+
+  &.studymode {
+    width: min(600px, 90vw);
+    min-height: min(420px, 90vh);
+    height: 100%;
+    max-height: 90vh;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  ul,
+  ol {
+    text-align: left;
+    margin: 0;
+  }
+
+  &__markdown {
+    // max-height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+    overflow-wrap: break-word;
+    touch-action: pan-y;
+    padding: 10px 0; // padding to account for inline LaTeX (adds height, causing scrollbar to appear)
+  }
+
+  &__hint {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    opacity: 60%;
+    user-select: none;
+    transition: opacity 0.3s ease;
+    font-size: calc(10px + 1.25vmin);
+  }
+}
+
+.flashcard__front,
+.flashcard__back {
+  position: absolute;
+  width: 100%;
+  flex: 1;
+  height: 100%;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__hint {
+    padding: calc(30px + 1.25vmin) 20px; // y-padding scales with font-size of hint
+  }
+}
+
+.flashcard__front {
+  transform: rotateY(0deg);
+}
+
+.flashcard__back {
+  transform: rotateY(180deg) translateY(-2px);
+  visibility: hidden;
+}
+
+@media screen and (min-width: 525px) {
+  .flashcard {
+    &.studymode {
+      max-width: 85vw;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .flashcard {
+    width: min(600px, 90vw);
+    min-height: min(420px, 90vh);
+    height: 100%;
+    max-height: 90vh;
+  }
+}

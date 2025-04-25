@@ -1,0 +1,94 @@
+.cardcreation {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+  align-items: stretch;
+  background: none;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    margin-bottom: 0;
+    border-radius: 1.25rem;
+    background: var(--card-bg, #fff);
+    box-shadow: 0 4px 24px rgba(108, 92, 231, 0.09);
+    min-width: 0;
+    transition: box-shadow 0.25s;
+
+    &:hover, &:focus-within {
+      box-shadow: 0 8px 32px rgba(108, 92, 231, 0.17);
+    }
+  }
+
+  &__input {
+    width: 100%;
+    margin: 0;
+    padding: 0.85rem 1rem;
+    border-radius: 0.5rem;
+    background: var(--input-bg, #f6f7fb);
+    color: var(--input-text, #22223b);
+    border: 1.5px solid var(--input-border, #e0e0e0);
+    font-size: 1.08rem;
+    font-weight: 500;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+
+    &:focus {
+      border-color: var(--accent, #6c5ce7);
+      background: #f3f0ff;
+    }
+
+    &__label {
+      display: block;
+      margin-bottom: 0.5rem;
+      margin-top: 0.5rem;
+      padding: 0;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--label-color, #6c5ce7);
+      letter-spacing: 0.01em;
+      text-align: left;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__preview {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding: 1.5rem 0 0 0;
+    min-height: 120px;
+  }
+}
+
+/* Responsive layout: side-by-side form and preview on desktop */
+@media screen and (min-width: 768px) {
+  .cardcreation {
+    flex-direction: row;
+    gap: 3.5rem;
+
+    &__form {
+      margin-bottom: 0;
+      width: 56%;
+      min-width: 320px;
+      max-width: 560px;
+    }
+    &__preview {
+      width: 44%;
+      min-width: 220px;
+      max-width: 420px;
+      padding-left: 1.5rem;
+      border-left: 2px solid #f0f0f4;
+    }
+  }
+}

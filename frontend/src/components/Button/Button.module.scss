@@ -1,0 +1,83 @@
+.button {
+  --btn-bg: linear-gradient(145deg, #6c5ce7 0%, #4b3dbf 100%);
+  --btn-text: #ffffff;
+  --btn-border: transparent;
+  --btn-shadow: 0 4px 12px rgba(108, 92, 231, 0.24);
+  
+  padding: 0.875rem 1.75rem;
+  border: 1px solid var(--btn-border);
+  border-radius: 0.75rem;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 112px;
+  justify-content: center;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.15) 50%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-1.5px);
+    box-shadow: var(--btn-shadow), 0 6px 20px rgba(108, 92, 231, 0.32);
+    
+    &::after {
+      opacity: 1;
+      animation: shimmer 1.8s infinite;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+    filter: brightness(0.95);
+  }
+
+  &[data-variant="secondary"] {
+    --btn-bg: rgba(108, 92, 231, 0.08);
+    --btn-text: #6c5ce7;
+    --btn-border: rgba(108, 92, 231, 0.12);
+    --btn-shadow: none;
+  }
+
+  &[data-state="disabled"] {
+    filter: grayscale(0.8);
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &[data-size="small"] {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    min-width: 88px;
+  }
+
+  &[data-fullwidth] {
+    width: 100%;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}

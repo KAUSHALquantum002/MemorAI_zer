@@ -1,0 +1,99 @@
+.footer {
+  width: 100vw;
+  background: linear-gradient(90deg, #6c5ce7 0%, #4b3dbf 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 0 1.5rem 0;
+  box-shadow: 0 0 16px rgba(76, 70, 180, 0.09);
+  margin-top: auto;
+  gap: 1.25rem;
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  &__logo {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    font-family: var(--logo-font, "Inter", "Segoe UI", sans-serif);
+    text-shadow: 0 2px 12px rgba(108, 92, 231, 0.09);
+  }
+
+  &__tagline {
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    opacity: 0.88;
+    letter-spacing: 0.01em;
+  }
+
+  &__links {
+    display: flex;
+    gap: 2.25rem;
+    margin: 0.5rem 0 0.5rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__link {
+    color: #fff;
+    font-size: 1.08rem;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 0%;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s;
+      margin-top: 3px;
+    }
+
+    &:hover,
+    &:focus {
+      color: #fdcb6e;
+      outline: none;
+
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__copy {
+    font-size: 0.98rem;
+    font-weight: 400;
+    opacity: 0.9;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 2rem 0 1rem 0;
+
+    &__logo {
+      font-size: 1.5rem;
+    }
+    &__links {
+      gap: 1.1rem;
+    }
+    &__tagline {
+      font-size: 0.98rem;
+    }
+    &__copy {
+      font-size: 0.89rem;
+    }
+  }
+}

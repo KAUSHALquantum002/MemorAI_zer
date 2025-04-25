@@ -1,0 +1,97 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // width: min(1000px, 94vw);
+  // min-height: min(600px, 100vh);
+  padding: 4rem 2rem 3rem 2rem;
+  background: var(--background, #f9fafd);
+
+  &__title {
+    margin: 0 0 2.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent, #6c5ce7);
+    letter-spacing: 0.03em;
+    text-shadow: 0 2px 8px rgba(108, 92, 231, 0.07);
+  }
+
+  &__subtitle {
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    color: var(--text-main, #22223b);
+    text-align: center;
+  }
+
+  p {
+    margin: 1.2rem 0;
+    font-size: 1.13rem;
+    color: var(--text-secondary, #4a4e69);
+    line-height: 1.7;
+    text-align: justify;
+    max-width: 700px;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+    width: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  &__graphs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  &__graph {
+    background: #fff;
+    border-radius: 1.25rem;
+    box-shadow: 0 3px 24px rgba(108, 92, 231, 0.09);
+    padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+    max-width: min(92vw, 340px);
+    max-height: 320px;
+    margin-bottom: 0.5rem;
+    transition: box-shadow 0.2s;
+
+    &:hover {
+      box-shadow: 0 6px 32px rgba(108, 92, 231, 0.16);
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    &__label {
+      margin: 0 0 0.8rem 0;
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--accent, #6c5ce7);
+      letter-spacing: 0.015rem;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about {
+    &__section {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 3.5rem;
+    }
+    &__graphs {
+      flex-direction: row;
+      justify-content: center;
+      gap: 3.5rem;
+    }
+    &__graph {
+      margin: 0;
+    }
+  }
+}

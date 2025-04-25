@@ -1,0 +1,28 @@
+.deckselection {
+  padding: var(--section-paddingY) 0;
+  width: min(1080px, 95vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__decks {
+    max-width: min(1080px, 95vw);
+  }
+
+  &__deck {
+    display: inline-block;
+    width: 100%;
+  }
+
+  h2 {
+    margin: 0;
+    margin-bottom: 35px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .nopreview {
+    column-count: 2;
+    column-gap: 0; // TODO: why is there still a gap? (on larger viewports)
+  }
+}

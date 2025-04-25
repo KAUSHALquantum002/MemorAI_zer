@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Playball");
+:root {
+  /* Color palette */
+  --background-color: #f1d9bd; // page background
+  --text-color: #413d3e; // text color, against page background or card\
+  --highlight-color: #ff9980; // button, highlight, link color
+  --highlight-dark: #d97056; // button hover color
+  --button-text-againstcard: var(
+    --text-color
+  ); // button text color, against card bg
+  --button-bg-againstcard: var(
+    --highlight-color
+  ); // button bg color, against card bg
+  --button-text-againstpage: var(
+    --text-color
+  ); // button text color, against page bg
+  --button-bg-againstpage: var(
+    --highlight-color
+  ); // button bg color, against page bg
+  --button-color-disabled: #929292; // button disabled color
+  --button-text-disabled: #0000007b; // button disabled text color
+  --saturated-teal: #00bfff;
+  --medium-teal: #00a8d9;
+  --light-teal: #7bb4bd;
+  --dark-teal: #2c7083;
+  --light-brown: #dba879;
+  --manilla-color: #f7ebdd; // card background (light mode)
+  --dark-brown: #87695f; // nav background (light mode)
+  --cool-white: #e1e2e2; // nav font color (light mode), button text color
+  --shadow-color: var(--text-color); // shadow color, for box shadows
+  --card-color: var(--manilla-color); // flashcard background
+  --menu-color: var(--dark-brown); // nav & hamburger background
+  --menu-font: var(--cool-white); // nav & hamburger font color
+  --menu-divider: var(--menu-font); // hamburger divider color
+  --text-highlight: var(--medium-teal); // text highlight color, for links
+  --sb-size: 10px; // scrollbar size
+
+  /* Cursive Logo Font */
+  --logo-font: "Playball", cursive;
+
+  /* Page spacing */
+  --page-width: 1450px;
+  --page-paddingX: 20px;
+
+  /* Section spacing */
+  --section-paddingY: 60px;
+
+  /* Media Queries */
+  --mobile: 525px;
+  --tablet: 768px;
+  --desktop: 1024px;
+
+  /* Card Scrollbar */
+  --card-scroll-thumb-color: var(--menu-color);
+  --card-scroll-track-color: var(--background-color);
+  --card-sb-size: 6px;
+}
+
+[data-theme="dark"] {
+  /* Dark theme color palette */
+  --background-color: #1b1818;
+  --text-color: #f1d9bd;
+  --highlight-color: #f3b3a6;
+  --highlight-dark: #d48e7f;
+  --button-bg-againstcard: var(--background-color);
+  --button-text-againstcard: var(--text-color);
+  --button-bg-againstpage: var(--card-color);
+  --button-text-againstpage: var(--text-color);
+  --card-color: #413d3e;
+  --menu-color: #413d3e;
+  --menu-divider: var(--background-color);
+  --shadow-color: #878787;
+  --text-highlight: var(--saturated-teal);
+  --menu-font: var(--text-color);
+  --card-scroll-thumb-color: var(--text-color);
+  --card-scroll-track-color: var(--background-color);
+  // --button-text: var(--background-color);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // overflow: hidden;
+
+  scrollbar-color: var(--background-color) var(--menu-color);
+  transition: scrollbar-color 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+  // border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--menu-color);
+  // border-radius: 10px;
+  background-clip: padding-box;
+}
+
+// pre {
+//   white-space: pre-wrap;
+// }
+
+// code {
+//   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+//     monospace;
+//   text-align: left;
+//   font-size: calc(10px + 1.5vmin);
+//   white-space: pre-wrap;
+// }
+
+a {
+  // text-decoration: none;
+  color: var(--text-highlight);
+}
+
+blockquote {
+  border-left: 5px solid var(--text-color);
+  padding-left: 10px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+// swiper arrows
+div.swiper-button-prev,
+div.swiper-button-next {
+  color: var(--text-color);
+}
+
+// swiper bullets
+span.swiper-pagination-bullet {
+  background-color: var(--text-color);
+}

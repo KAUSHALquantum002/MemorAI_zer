@@ -1,0 +1,11 @@
+flask
+supermemo2
+transformers
+diffusers
+torch
+stable-baselines3
+gym
+pyBKT
+blobfile
+protobuf
+tiktoken
